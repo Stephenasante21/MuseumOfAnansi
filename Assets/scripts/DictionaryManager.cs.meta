@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: b37e5da0c8c6df54297d1d5315f4ff74
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wordsJson: {fileID: 4900000, guid: 9719f8aa4668b054892cbfcb2c931987, type: 3}
+  - sentencesJson: {fileID: 4900000, guid: ab5601fd5fe8247439556f8bca170930, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

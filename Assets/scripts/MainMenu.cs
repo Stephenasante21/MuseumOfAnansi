@@ -13,4 +13,16 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OnEasyPressed()
+    {
+        GameSettings.IsHard = false;
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void OnHardPressed()
+    {
+        GameSettings.IsHard = true;
+        SceneManager.LoadScene("GameScene");
+    }
 }
