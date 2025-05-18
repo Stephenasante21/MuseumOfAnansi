@@ -549,7 +549,7 @@ public class FirstpersonController: MonoBehaviour
 
         // If you know how fast your character is trying to move,
         // then you can also multiply the push velocity by that.
-        body.velocity = hit.moveDirection * lastSpeed;
+        body.linearVelocity = hit.moveDirection * lastSpeed;
     }
 
     // Debug Gizmos
