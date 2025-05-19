@@ -123,15 +123,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
         {
             if (other.CompareTag(_playerTag))
             {
-                _playerControl = other.gameObject.GetComponent<ThirdPersonCharacterController>();
-                if (!_singleObjectScript.autoInteract)
-                {
                     _baseObjectScript.TriggerCanvas();
-                }
-                else if (_singleObjectScript.autoInteract)
-                {
-                    ThingsToDoOnInteract();
-                }
                 
                 _canInteract = true;
                 _baseObjectScript.TriggerEffect();
