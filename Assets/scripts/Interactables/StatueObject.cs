@@ -8,26 +8,29 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts.SingleObjectSc
 {
     public class StatueObject : ObjectContainer
     {
-        [SerializeField] private GameObject OkomfoMenuPanel;
-        [SerializeField] private FirstpersonController Firstperson;
-        [SerializeField] private Button PlayOkomfo;
+        [SerializeField] private GameObject MineGameMenu;
+        [SerializeField] private Button ButtonMiniGame;
+        [SerializeField] private string SceneName;
+
+        private FirstpersonController Firstperson;
         private void Start()
         {
-            PlayOkomfo.onClick.AddListener(OpenOkomfo);
+            Firstperson = FindAnyObjectByType<FirstpersonController>(); 
+            ButtonMiniGame.onClick.AddListener(LoadScene);
         }
         private bool isEnabled = false;
         public override void Interact()
         {
             isEnabled = !isEnabled; 
-            OkomfoMenuPanel.SetActive(isEnabled);
+            MineGameMenu.SetActive(isEnabled);
             Firstperson.SetLockCursor(isEnabled);
             
 
         }
 
-        public void OpenOkomfo()
+        public void LoadScene()
         {
-            SceneManager.LoadScene("Okomfo", LoadSceneMode.Additive);
+            SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
          
         }
 
