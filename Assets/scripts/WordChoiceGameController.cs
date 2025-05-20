@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class WordChoiceGameController : MonoBehaviour
 {
@@ -32,8 +33,11 @@ public class WordChoiceGameController : MonoBehaviour
     private DictionaryEntry currentEntry;
     private int correctCount = 0;
 
+    [SerializeField] private string SceneName;
+
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         // hide timer at first
         timerText.gameObject.SetActive(false);
 
@@ -147,5 +151,11 @@ public class WordChoiceGameController : MonoBehaviour
         foreach (var b in optionButtons) b.gameObject.SetActive(false);
 
         // (Optionally) you could now show a restart button or navigate back to the hub.
+    }
+
+    public void CloseGame()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        SceneManager.UnloadSceneAsync(SceneName);
     }
 }
