@@ -31,7 +31,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts.SingleObjectSc
         public void LoadScene()
         {
             SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
-            Interact();
+            MineGameMenu.SetActive(false);
         }
 
 
