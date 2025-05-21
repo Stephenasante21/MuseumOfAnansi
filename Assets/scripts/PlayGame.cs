@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class PlayOkomfo : MonoBehaviour
+public class PlayGame : MonoBehaviour
 {
+    [SerializeField] private string SceneName;
+
     public GameObject panel;
     void Awake()
     {
@@ -13,6 +15,6 @@ public class PlayOkomfo : MonoBehaviour
     public void OnStatuePlayPressed()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Okomfo");
+        SceneManager.LoadScene(SceneName);
     }
 }
