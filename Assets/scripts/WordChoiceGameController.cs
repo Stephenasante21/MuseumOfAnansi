@@ -101,6 +101,10 @@ public class WordChoiceGameController : MonoBehaviour
 
         if (chosen == currentEntry.foreign)
         {
+            FoundWordsManager.Instance.AddEntry(
+                currentEntry
+            );
+
             // correct
             btn.image.sprite = correctSprite;
             foreach (var b in optionButtons) b.interactable = false;

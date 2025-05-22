@@ -6,6 +6,8 @@ public struct PaintingStep
 {
     public string twiPrompt;
 
+    public string nativeMeaning;
+
     public int correctHotspot;
 }
 

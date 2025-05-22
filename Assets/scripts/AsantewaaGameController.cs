@@ -105,6 +105,12 @@ public class AsantewaaGameController : MonoBehaviour
         var step = _data.steps[_currentStep];
         if (idx == step.correctHotspot)
         {
+            DictionaryEntry entry = new DictionaryEntry();
+            entry.native = step.nativeMeaning;
+            entry.foreign = step.twiPrompt;
+
+            FoundWordsManager.Instance.AddEntry(entry);
+
             // correct → flash green, disable all, advance after 1s
             questionText.color = Color.green;
             foreach (var b in _data.hotspots) b.interactable = false;
