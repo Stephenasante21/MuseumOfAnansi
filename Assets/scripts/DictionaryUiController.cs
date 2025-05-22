@@ -8,14 +8,12 @@ public class DictionaryUiController : MonoBehaviour
 
     void OnEnable()
     {
-        // whenever this panel is enabled, rebuild the list
         FoundWordsManager.EntryAdded += FoundWordsManager_EntryAdded;
 
     }
 
     void OnDisable()
     {
-        // whenever this panel is enabled, rebuild the list
         FoundWordsManager.EntryAdded -= FoundWordsManager_EntryAdded;
 
     }

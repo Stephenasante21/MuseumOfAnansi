@@ -7,6 +7,7 @@ public class DictionaryEntry
 {
     public string foreign;
     public string native;
+    public string audioclip;
 }
 
 [System.Serializable]

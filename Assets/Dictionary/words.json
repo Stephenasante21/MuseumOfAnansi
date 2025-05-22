@@ -1,13 +1,49 @@
 {
     "entries": [
-        { "foreign": "Agoo",               "native": "hallo" },
-        { "foreign": "seesei",             "native": "nu" },
-        { "foreign": "anɔpa",              "native": "ochtend" },
-        { "foreign": "mepaakyɛw",          "native": "sorry" },
-        { "foreign": "ɛna",                "native": "moeder" },
-        { "foreign": "nuabarima",          "native": "broer" },
-        { "foreign": "aane",               "native": "ja" },
-        { "foreign": "abofra",             "native": "kind" },
-        { "foreign": "agya",               "native": "vader" }
+        {
+            "foreign": "Agoo",
+            "native": "hallo",
+            "audioclip": "test.mp3"
+        },
+        {
+            "foreign": "seesei",
+            "native": "nu",
+            "audioclip": "test2.mp3"
+        },
+        {
+            "foreign": "anɔpa",
+            "native": "ochtend",
+            "audioclip": "test3.mp3"
+        },
+        {
+            "foreign": "mepaakyɛw",
+            "native": "sorry",
+            "audioclip": "test.mp3"
+        },
+        {
+            "foreign": "ɛna",
+            "native": "moeder",
+            "audioclip": "test2.mp3"
+        },
+        {
+            "foreign": "nuabarima",
+            "native": "broer",
+            "audioclip": "test3.mp3"
+        },
+        {
+            "foreign": "aane",
+            "native": "ja",
+            "audioclip": "test2.mp3"
+        },
+        {
+            "foreign": "abofra",
+            "native": "kind",
+            "audioclip": "test3.mp3"
+        },
+        {
+            "foreign": "agya",
+            "native": "vader",
+            "audioclip": "test.mp3"
+        }
     ]
 }
