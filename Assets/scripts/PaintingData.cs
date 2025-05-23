@@ -4,10 +4,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public struct PaintingStep
 {
-    public string twiPrompt;
-
-    public string nativeMeaning;
-
+    public int wordId;
     public int correctHotspot;
 }
 

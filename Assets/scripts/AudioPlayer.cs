@@ -19,9 +19,7 @@ public class AudioPlayer : MonoBehaviour
 
     private void PlayAudio()
     {
-        if (currentRoutine != null)
-            return;
-
+        if (currentRoutine != null) return;
         currentRoutine = StartCoroutine(PlayFromStreamingAssets());
     }
 
@@ -36,17 +34,18 @@ public class AudioPlayer : MonoBehaviour
         {
             yield return uwr.SendWebRequest();
 
-            if (uwr.result == UnityWebRequest.Result.ConnectionError ||
-                uwr.result == UnityWebRequest.Result.ProtocolError)
+            if (uwr.result != UnityWebRequest.Result.Success)
             {
                 Debug.LogError($"AudioPlayer: Unable to load clip at {url}\n{uwr.error}");
             }
             else
             {
                 var clip = DownloadHandlerAudioClip.GetContent(uwr);
-                audioSource.PlayOneShot(clip);
+                audioSource.clip = clip;
+                audioSource.Play();
 
-                yield return new WaitForSeconds(clip.length);
+                // wait until it's done playing (works independent of timeScale)
+                yield return new WaitUntil(() => !audioSource.isPlaying);
             }
         }
 

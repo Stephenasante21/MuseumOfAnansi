@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
 public class DictionaryEntry
 {
+    public int id;
     public string foreign;
     public string native;
     public string audioclip;
@@ -22,7 +24,7 @@ public class DictionaryManager : MonoBehaviour
 
     [Header("JSON Assets (TextAsset)")]
     public TextAsset wordsJson;
-    public TextAsset sentencesJson; // mag leeg blijven voorlopig
+    public TextAsset sentencesJson; 
 
     [HideInInspector]
     public List<DictionaryEntry> words;
@@ -42,11 +44,9 @@ public class DictionaryManager : MonoBehaviour
 
     void LoadAll()
     {
-        // 1) parse woorden
         var wordsContainer = JsonUtility.FromJson<DictionaryContainer>(wordsJson.text);
         words = new List<DictionaryEntry>(wordsContainer.entries);
 
-        // 2) parse zinnen (indien aanwezig)
         if (sentencesJson != null && !string.IsNullOrEmpty(sentencesJson.text))
         {
             var sentencesContainer = JsonUtility.FromJson<DictionaryContainer>(sentencesJson.text);
@@ -63,5 +63,10 @@ public class DictionaryManager : MonoBehaviour
         if (GameSettings.IsHard && sentences.Count > 0)
             return sentences;
         return words;
+    }
+
+    public DictionaryEntry GetWordById(int id)
+    {
+        return words.Where(e => e.id == id).FirstOrDefault();
     }
 }
