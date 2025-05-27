@@ -9,24 +9,19 @@ public class DictionaryUiController : MonoBehaviour
     void OnEnable()
     {
         FoundWordsManager.EntryAdded += FoundWordsManager_EntryAdded;
-
     }
 
     void OnDisable()
     {
         FoundWordsManager.EntryAdded -= FoundWordsManager_EntryAdded;
-
     }
 
     private void FoundWordsManager_EntryAdded(DictionaryEntry newWord)
     {
 
-        Debug.Log($"FoundEntries count: {FoundWordsManager.Instance.FoundEntries.Count}");
-
-        // instantiate under Content
-        DictionaryEntryView go = Instantiate(entryPrefab, contentContainer, false).GetComponent<DictionaryEntryView>();
-
-        go.Init(newWord);
+        var view = Instantiate(entryPrefab, contentContainer, false)
+                     .GetComponent<DictionaryEntryView>();
+        view.Init(newWord);
 
     }
 }

@@ -105,19 +105,20 @@ public class HardOkomfoGameController : MonoBehaviour
 
         if (pick == currentEntry.missingTwi)
         {
-            var dictEntry = DictionaryManager.Instance
-                                .GetWords()
-                                .FirstOrDefault(e => e.foreign == currentEntry.missingTwi);
-            if (dictEntry != null)
-                FoundWordsManager.Instance.AddEntry(dictEntry);
+            // bouw de volledige zin
+            string fullSentence = currentEntry.templateTwi.Replace("___", currentEntry.missingTwi);
+            string translation = currentEntry.translationDutch;
 
+            // voeg ‘m toe als een DictionaryEntry via de nieuwe overload
+            FoundWordsManager.Instance.AddEntry(fullSentence, translation);
+
+            // feedback, verder spelverloop…
             btn.image.sprite = correctSprite;
             correctCount++;
             timerRunning = correctCount < maxCorrectAnswers;
 
-            questionText.text = currentEntry.templateTwi
-                                .Replace("___", currentEntry.missingTwi)
-                              + "\n\nVertaling:\n" + currentEntry.translationDutch;
+            questionText.text = fullSentence
+                + "\n\nVertaling:\n" + translation;
 
             if (correctCount >= maxCorrectAnswers)
                 Invoke(nameof(ShowFinal), 2f);
