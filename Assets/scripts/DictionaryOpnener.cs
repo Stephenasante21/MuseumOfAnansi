@@ -38,5 +38,4 @@ public class DictionaryOpnener : MonoBehaviour
         if (pauseTimeWhileOpen)
             Time.timeScale = 1f;
     }
-
 }

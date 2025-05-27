@@ -27,11 +27,9 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        // Alleen load van mixer op basis van PlayerPrefs
         savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 100f);
         musicSlider.value = savedMusicVolume;
 
-        // meteen naar mixer (genormaliseerd)
         float norm = savedMusicVolume / 100f;
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(Mathf.Max(norm, 0.0001f)) * 20f);
     }
@@ -39,52 +37,43 @@ public class MainMenu : MonoBehaviour
     public void PlayGame() => SceneManager.LoadScene("MuseumHub");
     public void QuitGame() => Application.Quit();
 
-    // Direct naar gameplay met easy/hard
     public void OnEasyPressed() { GameSettings.IsHard = false; SceneManager.LoadScene("MusumHub"); }
     public void OnHardPressed() { GameSettings.IsHard = true; SceneManager.LoadScene("MuseumHub"); }
 
     public void SettingsPressed()
     {
-        // 1) Capture actuele instellingen als INIT
         initIsHard = GameSettings.IsHard;
         initMusicVolume = PlayerPrefs.GetFloat("MusicVolume", savedMusicVolume);
 
-        // 2) Vul UI met INIT
         easyToggle.isOn = !initIsHard;
         hardToggle.isOn = initIsHard;
         musicSlider.value = initMusicVolume;
 
-        // 3) Toon panel
         mainMenuPanel.SetActive(false);
         settingsPanel.SetActive(true);
     }
 
     public void OnApplyPressed()
     {
-        // sla difficulty op
         PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
         PlayerPrefs.Save();
 
         GameSettings.IsHard = hardToggle.isOn;
 
-        // 1) lees slider (0–100) uit en sla precies dát op
         float stored = musicSlider.value;
         PlayerPrefs.SetFloat("MusicVolume", stored);
         PlayerPrefs.Save();
 
-        // 2) normaliseer en zet in de mixer
-        float normalized = stored / 100f;      // 0…1
+        float normalized = stored / 100f;      
         float db = Mathf.Log10(Mathf.Max(normalized, 0.0001f)) * 20f;
         audioMixer.SetFloat("MusicVolume", db);
 
-        // 3) update je init‐waarden
         initMusicVolume = stored;
         initIsHard = GameSettings.IsHard;
     }
 
     public void OnBackPressed()
     {
-        // sluit zonder te saven
         settingsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }

@@ -2,9 +2,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayGame : MonoBehaviour
 {
-    [SerializeField] private string SceneName;
+    [SerializeField] private string normalSceneName;
+    [SerializeField] private string hardSceneName;
 
-    public GameObject panel;
+    [SerializeField] private GameObject panel;
+
+
     void Awake()
     {
         panel.SetActive(false);
@@ -12,9 +15,15 @@ public class PlayGame : MonoBehaviour
 
     public void Show() { panel.SetActive(true); Time.timeScale = 0f; }
     public void Hide() { panel.SetActive(false); Time.timeScale = 1f; }
-    public void OnStatuePlayPressed()
+    public void OnPlayButtonPressed()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene(normalSceneName);
+    }
+
+    public void OnHardButtonPressed()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(hardSceneName);
     }
 }

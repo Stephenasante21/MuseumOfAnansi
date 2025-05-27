@@ -8,32 +8,43 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts.SingleObjectSc
 {
     public class StatueObject : ObjectContainer
     {
-        [SerializeField] private GameObject MineGameMenu;
-        [SerializeField] private Button ButtonMiniGame;
-        [SerializeField] private string SceneName;
+
+        [SerializeField] private GameObject mineGameMenu;
+
+        [SerializeField] private Button easyButton;      
+        [SerializeField] private Button hardButton;      
+        [SerializeField] private string easySceneName;   
+        [SerializeField] private string hardSceneName;   
 
         private FirstpersonController Firstperson;
         private void Start()
         {
-            Firstperson = FindAnyObjectByType<FirstpersonController>(); 
-            ButtonMiniGame.onClick.AddListener(LoadScene);
+            Firstperson = FindAnyObjectByType<FirstpersonController>();
+
+            easyButton.onClick.AddListener(LoadEasyScene);
+            hardButton.onClick.AddListener(LoadHardScene);
         }
         private bool isEnabled = false;
         public override void Interact()
         {
-            isEnabled = !isEnabled; 
-            MineGameMenu.SetActive(isEnabled);
+            isEnabled = !isEnabled;
+            mineGameMenu.SetActive(isEnabled);
             Firstperson.SetLockCursor(isEnabled);
             
-
         }
 
-        public void LoadScene()
+        private void LoadEasyScene()
         {
-            SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
-            MineGameMenu.SetActive(false);
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(easySceneName, LoadSceneMode.Additive);
+            mineGameMenu.SetActive(false);
         }
 
-
+        private void LoadHardScene()
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(hardSceneName, LoadSceneMode.Additive);
+            mineGameMenu.SetActive(false);
+        }
     }
 }

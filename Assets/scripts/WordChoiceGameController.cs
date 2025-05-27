@@ -1,6 +1,4 @@
-﻿// Assets/Scripts/WordChoiceGameController.cs
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class WordChoiceGameController : MonoBehaviour
 {
+    [Header("Scene Navigation")]
+    [SerializeField] private string SceneName;
+
     [Header("Opties")]
     public Transform optionsParent;
     public int optionsCount = 8;
@@ -16,6 +17,7 @@ public class WordChoiceGameController : MonoBehaviour
     [Header("UI References")]
     public TMP_Text questionText;
     public Button[] optionButtons;
+    public Button closeButton;
 
     [Header("Sprites")]
     public Sprite normalSprite;
@@ -33,10 +35,11 @@ public class WordChoiceGameController : MonoBehaviour
     private DictionaryEntry currentEntry;
     private int correctCount = 0;
 
-    [SerializeField] private string SceneName;
-
     void Start()
     {
+
+        closeButton.onClick.AddListener(CloseGame);
+
         Cursor.lockState = CursorLockMode.None;
         // hide timer at first
         timerText.gameObject.SetActive(false);
@@ -58,7 +61,7 @@ public class WordChoiceGameController : MonoBehaviour
 
     void SetupQuestion()
     {
-        var list = DictionaryManager.Instance.GetCurrentList();
+        var list = DictionaryManager.Instance.GetWords();
         currentEntry = list[Random.Range(0, list.Count)];
 
         questionText.text = $"Kies het Twi-woord voor:\n\"{currentEntry.native}\"";
