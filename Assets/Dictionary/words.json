@@ -87,6 +87,14 @@
     { "id": 76, "foreign": "so",            "native": "op",          "audioclip": "test.mp3"    },
     { "id": 77, "foreign": "ase",           "native": "onder",       "audioclip": "test.mp3"    },
     { "id": 78, "foreign": "ne",            "native": "met",         "audioclip": "test.mp3"    },
-    { "id": 79, "foreign": "a nni ho",      "native": "zonder",      "audioclip": "test.mp3"    }
+    { "id": 79, "foreign": "a nni ho",      "native": "zonder",      "audioclip": "test.mp3"    },
+    { "id": 80, "foreign": "kenkan",        "native": "lezen",       "audioclip": "test.mp3"    },
+    { "id": 81, "foreign": "kɔda",          "native": "slapen",      "audioclip": "test.mp3"    },
+    { "id": 82, "foreign": "yɛ aduane",     "native": "eten klaarmaken",      "audioclip": "test.mp3"    },
+    { "id": 83, "foreign": "kyerɛw",        "native": "schrijven",      "audioclip": "test.mp3"},
+    { "id": 84, "foreign": "bue ɔpon no",        "native": "deur openen",      "audioclip": "test.mp3"},
+    { "id": 85, "foreign": "huri",        "native": "springen",      "audioclip": "test.mp3"},
+    { "id": 86, "foreign": "to",        "native": "gooien",      "audioclip": "test.mp3"},
+    { "id": 87, "foreign": "tu ammirika",        "native": "rennen",      "audioclip": "test.mp3"}
     ]
 }
