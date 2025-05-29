@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class AsantewaaGameController : MonoBehaviour
+public class AsantewaaHardGamecontroller : MonoBehaviour
 {
     [Header("Scene Navigation")]
     [SerializeField] private string SceneName;
@@ -146,11 +146,10 @@ public class AsantewaaGameController : MonoBehaviour
         questionText.color = _defaultPromptColor;
 
         paintingContainer.gameObject.SetActive(false);
-
         if (elapsedTime <= timeLimit)
         {
-            GameState.AsantewaaPiece = true;
-            Debug.Log("✅ Asantewaa statue piece collected!");
+            GameState.HardAsantewaaPiece = true;
+            Debug.Log("✅ Hard Asantewaa statue piece collected!");
         }
     }
 

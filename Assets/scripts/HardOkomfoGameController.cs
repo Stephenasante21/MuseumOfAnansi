@@ -24,6 +24,7 @@ public class HardOkomfoGameController : MonoBehaviour
     public TMP_Text timerText;
     private float elapsedTime;
     private bool timerRunning;
+    public float timeLimit = 45f;
 
     [Header("Game Settings")]
     public int optionsCount = 4;  
@@ -143,6 +144,12 @@ public class HardOkomfoGameController : MonoBehaviour
 
         foreach (var b in optionButtons)
             b.gameObject.SetActive(false);
+
+        if (elapsedTime <= timeLimit)
+        {
+            GameState.HardOkomfoPiece = true;
+            Debug.Log("✅ Hard Okomfo statue piece collected!");
+        }
     }
 
     public void CloseGame()

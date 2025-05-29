@@ -25,9 +25,10 @@ public class WordChoiceGameController : MonoBehaviour
     public Sprite wrongSprite;
 
     [Header("Timer")]
-    public TMP_Text timerText;    // drag your TimerText here
+    public TMP_Text timerText;    
     private float elapsedTime;
     private bool timerRunning;
+    public float timeLimit = 45f;
 
     [Header("Game Settings")]
     public int maxCorrectAnswers = 5;
@@ -157,7 +158,15 @@ public class WordChoiceGameController : MonoBehaviour
         // hide options
         foreach (var b in optionButtons) b.gameObject.SetActive(false);
 
-        // (Optionally) you could now show a restart button or navigate back to the hub.
+               
+        if (elapsedTime <= timeLimit)
+        {
+            PlayerPrefs.SetInt("OkomfoHardUnlocked", 1);
+            PlayerPrefs.Save();
+            Debug.Log("OkomfoHard vrijgespeeld!");
+            GameState.OkomfoPiece = true;
+            Debug.Log("Okomfo statue piece collected!");
+        }
     }
 
     public void CloseGame()
