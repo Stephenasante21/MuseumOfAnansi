@@ -1,4 +1,4 @@
-using Fungus;
+﻿using Fungus;
 using UnityEngine;
 
 public class GameStatePublisher : MonoBehaviour
@@ -14,7 +14,6 @@ public class GameStatePublisher : MonoBehaviour
 
     void Update()
     {
-        // Push each static flag into the matching Fungus Boolean variable:
         flowchart.SetBooleanVariable("OkomfoPiece", GameState.OkomfoPiece);
         flowchart.SetBooleanVariable("HardOkomfoPiece", GameState.HardOkomfoPiece);
         flowchart.SetBooleanVariable("AsantewaaPiece", GameState.AsantewaaPiece);
@@ -32,21 +31,26 @@ public class GameStatePublisher : MonoBehaviour
             _sentHardOkomfoPiece = true;
         }
 
-        if (GameState.HardOkomfoPiece && !_sentAsantewaaPiece)
+        if (GameState.AsantewaaPiece && !_sentAsantewaaPiece)
         {
-            flowchart.ExecuteBlock("HardOkomfoPiece");
+            flowchart.ExecuteBlock("AsantewaaPiece");
             _sentAsantewaaPiece = true;
         }
 
-        if (GameState.AsantewaaPiece && !_sentHardAsantewaaPiece)
+        if (GameState.HardAsantewaaPiece && !_sentHardAsantewaaPiece)
         {
-            flowchart.ExecuteBlock("AsantewaaPiece");
+            flowchart.ExecuteBlock("HardAsantewaaPiece");
             _sentHardAsantewaaPiece = true;
         }
 
-        if (GameState.HardAsantewaaPiece && !_sentAllPieces)
+        bool all = GameState.OkomfoPiece
+                && GameState.HardOkomfoPiece
+                && GameState.AsantewaaPiece
+                && GameState.HardAsantewaaPiece;
+
+        if (all && !_sentAllPieces)
         {
-            flowchart.ExecuteBlock("HardAsantewaaPiece");
+            flowchart.ExecuteBlock("AllPieces");
             _sentAllPieces = true;
         }
     }
