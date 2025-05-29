@@ -86,7 +86,9 @@ namespace Fungus
 
             if (writer != null)
             {
-                if (Input.GetButtonDown(currentStandaloneInputModule.submitButton) ||
+                // Eigen toevoeging: Enter (Return) mag de dialoog ook voortzetten
+                if (Input.GetKeyDown(KeyCode.Return) ||
+                    Input.GetButtonDown(currentStandaloneInputModule.submitButton) ||
                     (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
                 {
                     SetNextLineFlag();
