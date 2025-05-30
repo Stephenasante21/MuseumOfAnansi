@@ -20,7 +20,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
 
         private ThirdPersonCharacterController _playerControl;
         //private Camera inspectorCamera;
-        
+
         private Vector3 parentOriginalPos;
         private Quaternion parentOriginalRotation;
         private Rigidbody _rb;
@@ -30,14 +30,14 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
             _parent = transform.parent.gameObject;
             _baseObjectScript = _parent.GetComponent<EE_Object>();
             _singleObjectScript = _parent.GetComponent<ObjectContainer>();
-            if (_parent.GetComponent<EE_InspectObject>()!=null)
+            if (_parent.GetComponent<EE_InspectObject>() != null)
             {
                 _inspectScript = _parent.GetComponent<EE_InspectObject>();
             }
             _playerTag = _baseObjectScript.playerTag;
             //inspectorCamera = EE_InspectCamera.Instance.inspectCamera;
-            
-            if (_parent.GetComponent<Rigidbody>()!=null)
+
+            if (_parent.GetComponent<Rigidbody>() != null)
             {
                 _rb = _parent.GetComponent<Rigidbody>();
             }
@@ -51,8 +51,8 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
                 InputHandler.Instance.InteractionTriggered = false;
                 ThingsToDoOnInteract();
             }
-            
-            if (_canInteract && InputHandler.Instance.InspectionTriggered && !_singleObjectScript.autoInteract && _inspectScript!=null)
+
+            if (_canInteract && InputHandler.Instance.InspectionTriggered && !_singleObjectScript.autoInteract && _inspectScript != null)
             {
                 InputHandler.Instance.InspectionTriggered = false;
                 DoInspection();
@@ -63,7 +63,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
                 _playerControl.enabled = true;
                 EndInspection();
             }
-            
+
 
             if (isInspecting && Input.GetKeyDown(KeyCode.Escape))
             {
@@ -81,7 +81,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
             parentOriginalPos = _parent.transform.position;
             parentOriginalRotation = _parent.transform.rotation;
 
-            if (_rb!=null)
+            if (_rb != null)
             {
                 _rb.useGravity = false;
             }
@@ -96,7 +96,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
             _playerControl.enabled = true;
             EE_InspectCamera.Instance.ToggleState(false);
             EE_InspectCamera.Instance.ToggleLayer(_parent);
-            if (_rb!=null)
+            if (_rb != null)
             {
                 _rb.useGravity = true;
             }
@@ -108,23 +108,31 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
 
         private void ThingsToDoOnInteract()
         {
-            if (_singleObjectScript!=null)
+            if (_singleObjectScript != null)
             {
-                if (!_singleObjectScript.dontUseDefaultInteraction) _singleObjectScript.Interact(); 
+                if (!_singleObjectScript.dontUseDefaultInteraction) _singleObjectScript.Interact();
                 if (_singleObjectScript.destroyOnUse) _singleObjectScript.DestroyOnUse();
                 if (_singleObjectScript.continuousInteraction && !_singleObjectScript.autoInteract) _canInteract = true;
                 _baseObjectScript.PlaySound();
                 _singleObjectScript.onInteractWithItem?.Invoke();
             }
         }
-        
+
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(_playerTag))
             {
+                _playerControl = other.gameObject.GetComponent<ThirdPersonCharacterController>();
+                if (!_singleObjectScript.autoInteract)
+                {
                     _baseObjectScript.TriggerCanvas();
-                
+                }
+                else if (_singleObjectScript.autoInteract)
+                {
+                    ThingsToDoOnInteract();
+                }
+
                 _canInteract = true;
                 _baseObjectScript.TriggerEffect();
 
@@ -142,7 +150,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
                 }
 
                 #region Door Special Conditions
-                
+
                 if (_singleObjectScript != null && _singleObjectScript.autoInteract)
                 {
                     if (_singleObjectScript is EE_SimpleDoorObject or EE_SimpleDoubleDoor or EE_SlidingDoubleDoor or EE_SlidingSingleDoor)
@@ -152,7 +160,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
                 }
 
                 #endregion
-                
+
                 _canInteract = false;
                 _baseObjectScript.TriggerEffect();
             }
