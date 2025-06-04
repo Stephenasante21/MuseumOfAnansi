@@ -18,7 +18,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
         private EE_Object _baseObjectScript;
         private EE_InspectObject _inspectScript;
 
-        private ThirdPersonCharacterController _playerControl;
+        private FirstpersonController _playerControl;
         //private Camera inspectorCamera;
 
         private Vector3 parentOriginalPos;
@@ -89,6 +89,8 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
             _parent.transform.position = EE_InspectCamera.Instance.objectHolder.transform.position;
             _inspectScript.enabled = true;
             isInspecting = true;
+
+
         }
 
         private void EndInspection()
@@ -123,7 +125,7 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
         {
             if (other.CompareTag(_playerTag))
             {
-                _playerControl = other.gameObject.GetComponent<ThirdPersonCharacterController>();
+                _playerControl = other.gameObject.GetComponent<FirstpersonController>();
                 if (!_singleObjectScript.autoInteract)
                 {
                     _baseObjectScript.TriggerCanvas();

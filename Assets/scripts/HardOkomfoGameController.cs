@@ -11,7 +11,7 @@ public class HardOkomfoGameController : MonoBehaviour
     [SerializeField] private string SceneName;
 
     [Header("UI References")]
-    public TMP_Text questionText;     
+    public TMP_Text questionText;
     public Button[] optionButtons;
     public Button closeButton;
 
@@ -27,22 +27,41 @@ public class HardOkomfoGameController : MonoBehaviour
     public float timeLimit = 45f;
 
     [Header("Game Settings")]
-    public int optionsCount = 4;  
+    public int optionsCount = 4;
     public int maxCorrectAnswers = 5;
+
+    [Header("Audio Clips")]
+    [Tooltip("Play this when the player selects a correct answer.")]
+    public AudioClip correctSound;
+
+    [Tooltip("Play this when the player selects a wrong answer.")]
+    public AudioClip incorrectSound;
+
+    private AudioSource _audioSource;
 
     private List<SentenceEntry> allSentences;
     private SentenceEntry currentEntry;
     private int correctCount;
 
+    private void Awake()
+    {
+        // Ensure there is an AudioSource on this GameObject
+        _audioSource = GetComponent<AudioSource>();
+        if (_audioSource == null)
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     void Start()
     {
-
         closeButton.onClick.AddListener(CloseGame);
 
         allSentences = DictionaryManager.Instance.GetSentences();
         if (allSentences == null || allSentences.Count == 0)
-            Debug.LogError("[HardOkomfo] Geen zinnen geladen in DictionaryManager!");   
+        {
+            Debug.LogError("[HardOkomfo] Geen zinnen geladen in DictionaryManager!");
+        }
 
         timerText.gameObject.SetActive(false);
         elapsedTime = 0f;
@@ -55,11 +74,14 @@ public class HardOkomfoGameController : MonoBehaviour
     void Update()
     {
         if (timerRunning)
+        {
             elapsedTime += Time.deltaTime;
+        }
     }
 
     void NextQuestion()
     {
+        // Reset sprites, listeners, and interactability
         foreach (var b in optionButtons)
         {
             b.image.sprite = normalSprite;
@@ -67,9 +89,11 @@ public class HardOkomfoGameController : MonoBehaviour
             b.onClick.RemoveAllListeners();
         }
 
+        // Pick a random sentence
         currentEntry = allSentences[Random.Range(0, allSentences.Count)];
         questionText.text = currentEntry.templateTwi;
 
+        // Build a list of wrong options, then insert the correct one
         var pool = allSentences
             .Select(e => e.missingTwi)
             .Where(w => w != currentEntry.missingTwi)
@@ -89,6 +113,8 @@ public class HardOkomfoGameController : MonoBehaviour
                 var btn = optionButtons[i];
                 btn.gameObject.SetActive(true);
                 btn.GetComponentInChildren<TMP_Text>().text = options[i];
+
+                // Re‐wire listener
                 int idx = i;
                 btn.onClick.AddListener(() => OnOptionSelected(idx));
             }
@@ -106,28 +132,47 @@ public class HardOkomfoGameController : MonoBehaviour
 
         if (pick == currentEntry.missingTwi)
         {
-            // bouw de volledige zin
+            // Build the full sentence
             string fullSentence = currentEntry.templateTwi.Replace("___", currentEntry.missingTwi);
             string translation = currentEntry.translationDutch;
 
-            // voeg ‘m toe als een DictionaryEntry via de nieuwe overload
+            // Add to FoundWordsManager
             FoundWordsManager.Instance.AddEntry(fullSentence, translation);
 
-            // feedback, verder spelverloop…
+            // Play correct‐sound
+            if (correctSound != null)
+            {
+                _audioSource.PlayOneShot(correctSound);
+            }
+
+            // Show correct sprite
             btn.image.sprite = correctSprite;
             correctCount++;
             timerRunning = correctCount < maxCorrectAnswers;
 
-            questionText.text = fullSentence
-                + "\n\nVertaling:\n" + translation;
+            // Display the completed sentence + translation
+            questionText.text = fullSentence + "\n\nVertaling:\n" + translation;
 
             if (correctCount >= maxCorrectAnswers)
+            {
+                // Delay before showing final results
                 Invoke(nameof(ShowFinal), 2f);
+            }
             else
+            {
+                // Move on to the next question after a short pause
                 Invoke(nameof(NextQuestion), 2f);
+            }
         }
         else
         {
+            // Play incorrect‐sound
+            if (incorrectSound != null)
+            {
+                _audioSource.PlayOneShot(incorrectSound);
+            }
+
+            // Show wrong sprite and disable this button
             btn.image.sprite = wrongSprite;
             btn.interactable = false;
         }
@@ -142,8 +187,11 @@ public class HardOkomfoGameController : MonoBehaviour
 
         questionText.text = $"Gefeliciteerd!\nJe hebt {correctCount} zinnen goed.\nKlik om verder te gaan.";
 
+        // Hide all options
         foreach (var b in optionButtons)
+        {
             b.gameObject.SetActive(false);
+        }
 
         if (elapsedTime <= timeLimit)
         {

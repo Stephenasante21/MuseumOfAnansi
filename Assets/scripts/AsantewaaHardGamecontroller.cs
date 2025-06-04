@@ -18,6 +18,15 @@ public class AsantewaaHardGameController : MonoBehaviour
     public TMP_Text timerText;
     public Button closeButton;
 
+    [Header("Audio Clips")]
+    [Tooltip("Play this when the player clicks a correct hotspot.")]
+    public AudioClip correctSound;
+
+    [Tooltip("Play this when the player clicks a wrong hotspot.")]
+    public AudioClip incorrectSound;
+
+    private AudioSource _audioSource;
+
     private PaintingData _data;
     private int _currentStep;
 
@@ -30,6 +39,16 @@ public class AsantewaaHardGameController : MonoBehaviour
 
     private Color _defaultPromptColor;
 
+    private void Awake()
+    {
+        // Ensure there's an AudioSource on this GameObject
+        _audioSource = GetComponent<AudioSource>();
+        if (_audioSource == null)
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
+
     void Start()
     {
         _defaultPromptColor = questionText.color;
@@ -37,7 +56,6 @@ public class AsantewaaHardGameController : MonoBehaviour
         elapsedTime = 0f;
         _timerRunning = true;
         timerText.gameObject.SetActive(false);
-
 
         closeButton.onClick.AddListener(CloseGame);
 
@@ -47,21 +65,29 @@ public class AsantewaaHardGameController : MonoBehaviour
     void Update()
     {
         if (_timerRunning)
+        {
             elapsedTime += Time.deltaTime;
+        }
     }
 
     void SpawnNextPainting()
     {
+        // Destroy the previous painting, if any
         if (_currentPaintingGO != null)
+        {
             Destroy(_currentPaintingGO);
+        }
 
         var pool = GameSettings.IsHard ? hardPaintings : easyPaintings;
 
+        // Clamp index
         if (_paintingIndex < 0) _paintingIndex = 0;
         if (_paintingIndex >= pool.Length) _paintingIndex = pool.Length - 1;
 
+        // Instantiate the new painting prefab
         _currentPaintingGO = Instantiate(pool[_paintingIndex], paintingContainer, false);
 
+        // Cache its PaintingData and wire up hotspot callbacks
         _data = _currentPaintingGO.GetComponent<PaintingData>();
         for (int i = 0; i < _data.hotspots.Length; i++)
         {
@@ -82,8 +108,9 @@ public class AsantewaaHardGameController : MonoBehaviour
         questionText.text = DictionaryManager.Instance.GetWordById(step.wordId).foreign;
 
         foreach (var btn in _data.hotspots)
+        {
             btn.interactable = true;
-
+        }
     }
 
     void OnHotspotClicked(int idx)
@@ -91,19 +118,34 @@ public class AsantewaaHardGameController : MonoBehaviour
         var step = _data.steps[_currentStep];
         if (idx == step.correctHotspot)
         {
+            // Play correct sound
+            if (correctSound != null)
+            {
+                _audioSource.PlayOneShot(correctSound);
+            }
+
+            // Mark as found
             var entry = DictionaryManager.Instance.GetWordById(step.wordId);
             FoundWordsManager.Instance.AddEntry(entry);
 
             questionText.color = Color.green;
-            foreach (var b in _data.hotspots) b.interactable = false;
+            foreach (var b in _data.hotspots)
+            {
+                b.interactable = false;
+            }
             Invoke(nameof(AdvanceStep), 1f);
         }
         else
         {
+            // Play incorrect sound
+            if (incorrectSound != null)
+            {
+                _audioSource.PlayOneShot(incorrectSound);
+            }
+
             questionText.color = Color.red;
             Invoke(nameof(ResetPromptColor), 0.5f);
         }
-
     }
 
     void ResetPromptColor()
@@ -114,11 +156,13 @@ public class AsantewaaHardGameController : MonoBehaviour
     void AdvanceStep()
     {
         _currentStep++;
+
         if (_currentStep >= _data.steps.Length)
         {
             _paintingIndex++;
-            if (_paintingIndex < easyPaintings.Length ||
-                _paintingIndex < hardPaintings.Length)
+            var pool = GameSettings.IsHard ? hardPaintings : easyPaintings;
+
+            if (_paintingIndex < pool.Length)
             {
                 SpawnNextPainting();
             }
@@ -138,7 +182,8 @@ public class AsantewaaHardGameController : MonoBehaviour
         _timerRunning = false;
 
         timerText.gameObject.SetActive(true);
-        int m = (int)(elapsedTime / 60f), s = (int)(elapsedTime % 60f);
+        int m = (int)(elapsedTime / 60f);
+        int s = (int)(elapsedTime % 60f);
         timerText.text = $"Tijd: {m:00}:{s:00}";
 
         questionText.text = "Gefeliciteerd! Je hebt alles gevonden.";
@@ -149,7 +194,7 @@ public class AsantewaaHardGameController : MonoBehaviour
         if (elapsedTime <= timeLimit)
         {
             GameState.HardAsantewaaPiece = true;
-            Debug.Log("✅ Asantewaa Hard statue piece collected!");
+            Debug.Log("Hard Asantewaa statue piece collected!");
         }
     }
 
