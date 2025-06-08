@@ -9,7 +9,7 @@
     },
     {
       "id": 1,
-      "templateTwi": "Ɔkyena me bɛkɔ ___.",
+      "templateTwi": "Ɔkyena me kɔ ___.",
       "missingTwi": "adwuma",
       "translationDutch": "Morgen ga ik naar het werk.",
       "audioclip": "test.mp3"
@@ -30,16 +30,16 @@
     },
     {
       "id": 4,
-      "templateTwi": "Anɔpa ___ hyerɛn.",
+      "templateTwi": "___ no hyerɛn.",
       "missingTwi": "ɛwia",
-      "translationDutch": "In de ochtend schijnt de zon.",
+      "translationDutch": "De zon schijnt.",
       "audioclip": "test.mp3"
     },
     {
       "id": 5,
-      "templateTwi": "Kofi kɔ ___ mu.",
+      "templateTwi": "Kofi ɛ fa ___ mu.",
       "missingTwi": "ɔpono",
-      "translationDutch": "Kofi gaat door de deur naar binnen.",
+      "translationDutch": "Kofi gaat door de deur.",
       "audioclip": "test.mp3"
     },
     {
@@ -59,22 +59,22 @@
     {
       "id": 8,
       "templateTwi": "Seesei me reba ___.",
-      "missingTwi": "fie",
+      "missingTwi": "efie",
       "translationDutch": "Nu kom ik naar huis.",
       "audioclip": "test.mp3"
     },
     {
       "id": 9,
-      "templateTwi": "Anɔpa no me di ___.",
+      "templateTwi": "Me di ___ Anɔpa .",
       "missingTwi": "aduane",
-      "translationDutch": "In de ochtend eet ik eten.",
+      "translationDutch": "Ik eet in de ochtend.",
       "audioclip": "test.mp3"
     },
     {
       "id": 10,
-      "templateTwi": "Agoo, ___ bra ha.",
-      "missingTwi": "mo",
-      "translationDutch": "Hallo, kom jij hier.",
+      "templateTwi": "Agoo, ___ ha.",
+      "missingTwi": "bra",
+      "translationDutch": "Hallo, kom hier.",
       "audioclip": "test.mp3"
     },
     {
@@ -86,43 +86,43 @@
     },
     {
       "id": 12,
-      "templateTwi": "Me ___ no yɛ den paa.",
+      "templateTwi": "Me ___ no yɛ nnam paa.",
       "missingTwi": "sekan",
-      "translationDutch": "Mijn zwaard is erg sterk.",
+      "translationDutch": "Mijn zwaard is erg scherp.",
       "audioclip": "test.mp3"
     },
     {
       "id": 13,
-      "templateTwi": "Maame no re____ aduanɛ.",
-      "missingTwi": "bɔ",
+      "templateTwi": "Maame ____ aduanɛ.",
+      "missingTwi": "nua",
       "translationDutch": "Moeder kookt eten.",
       "audioclip": "test.mp3"
     },
     {
       "id": 14,
       "templateTwi": "Dua no ___.",
-      "missingTwi": "tena hɔ",
+      "missingTwi": "gyena hɔ",
       "translationDutch": "De boom staat daar.",
       "audioclip": "test.mp3"
     },
     {
       "id": 15,
-      "templateTwi": "Abofra no rebo ___.",
+      "templateTwi": "Abɔfra no e'di ___.",
       "missingTwi": "agorɔ",
       "translationDutch": "Het kind speelt.",
       "audioclip": "test.mp3"
     },
     {
       "id": 16,
-      "templateTwi": "Onuabaa no rehwɛ ___.",
+      "templateTwi": "Me onuabaa na ɛhwɛ ___.",
       "missingTwi": "me",
       "translationDutch": "Mijn zus zorgt voor mij.",
       "audioclip": "test.mp3"
     },
     {
       "id": 17,
-      "templateTwi": "Agya no kyerɛkyerɛ ___.",
-      "missingTwi": "me",
+      "templateTwi": "Me papa na ɛ ___ me.",
+      "missingTwi": "kyerɛ",
       "translationDutch": "Vader leert mij.",
       "audioclip": "test.mp3"
     },
@@ -142,43 +142,43 @@
     },
     {
       "id": 20,
-      "templateTwi": "Abofra no rebo ___.",
-      "missingTwi": "agorɔ",
-      "translationDutch": "Het kind speelt.",
+      "templateTwi": "Abofra no ___.",
+      "missingTwi": "ada",
+      "translationDutch": "Het kind slaapt.",
       "audioclip": "test.mp3"
     },
     {
       "id": 21,
-      "templateTwi": "Gya no hyerɛn ___.",
-      "missingTwi": "anɔpa",
-      "translationDutch": "Het vuur schijnt ’s ochtends.",
+      "templateTwi": "___ no a sɔ.",
+      "missingTwi": "Egya",
+      "translationDutch": "Het vuur is aan.",
       "audioclip": "test.mp3"
     },
     {
       "id": 22,
-      "templateTwi": "Kɔ ___ no mu.",
+      "templateTwi": "Bue ___ no.",
       "missingTwi": "ɛpono",
-      "translationDutch": "Ga door de deur naar binnen.",
+      "translationDutch": "Doe de deur open.",
       "audioclip": "test.mp3"
     },
     {
       "id": 23,
-      "templateTwi": "Mete ___ so.",
-      "missingTwi": "Fie",
-      "translationDutch": "Ik woon in het huis.",
+      "templateTwi": "Mete ___ hɔ.",
+      "missingTwi": "eFie",
+      "translationDutch": "Ik woon in die huis.",
       "audioclip": "test.mp3"
     },
     {
       "id": 24,
-      "templateTwi": "Seesei me rekɔ ___.",
+      "templateTwi": "Seesei me kɔ ___.",
       "missingTwi": "adwuma",
-      "translationDutch": "Nu ga ik naar het werk.",
+      "translationDutch": "Ik ga nu naar werk.",
       "audioclip": "test.mp3"
     },
     {
       "id": 25,
-      "templateTwi": "Merekɔkan fi baako kosi ___.",
-      "missingTwi": "du",
+      "templateTwi": "Me kan efri baako a kosi ___.",
+      "missingTwi": "edu",
       "translationDutch": "Ik tel van één tot tien.",
       "audioclip": "test.mp3"
     }

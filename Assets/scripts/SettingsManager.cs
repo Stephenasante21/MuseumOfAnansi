@@ -8,7 +8,8 @@ public class SettingsManager : MonoBehaviour
     [Header("UI")]
     public GameObject settingsPanel;
     public Button applyButton;
-    public Button backButton;
+    public Button quitButton;
+
     public Slider musicVolumeSlider;
     public Slider ambienceVolumeSlider;
 
@@ -31,7 +32,7 @@ public class SettingsManager : MonoBehaviour
         settingsPanel.SetActive(false);
 
         applyButton.onClick.AddListener(ApplyAndClose);
-        backButton.onClick.AddListener(Close);
+        quitButton.onClick.AddListener(QuitGame);
     }
 
     void Update()
@@ -46,7 +47,7 @@ public class SettingsManager : MonoBehaviour
     public void Open()
     {
         settingsPanel.SetActive(true);
-        Time.timeScale = 0f;                   
+        Time.timeScale = 0f;
 
         musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVol", 1f);
         ambienceVolumeSlider.value = PlayerPrefs.GetFloat("AmbienceVol", 1f);
@@ -54,8 +55,7 @@ public class SettingsManager : MonoBehaviour
 
     public void Close()
     {
-        settingsPanel.SetActive(false);
-        Time.timeScale = 1f;                   
+        settingsPanel.SetActive(false);Time.timeScale = 1f;
     }
 
     void ApplyAndClose()
@@ -68,4 +68,10 @@ public class SettingsManager : MonoBehaviour
 
         Close();
     }
+
+    private void QuitGame()
+    {
+        Application.Quit();
+    }
 }
+ 

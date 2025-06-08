@@ -80,7 +80,7 @@
     },
     {
       "id": 13,
-      "foreign": "Fie",
+      "foreign": "efie",
       "native": "Huis",
       "audioclip": "test.mp3"
     },
@@ -98,7 +98,7 @@
     },
     {
       "id": 16,
-      "foreign": "Gya",
+      "foreign": "egya",
       "native": "Vuur",
       "audioclip": "test.mp3"
     },
@@ -140,25 +140,25 @@
     },
     {
       "id": 23,
-      "foreign": "hena",
+      "foreign": "hwanaa",
       "native": "wie",
       "audioclip": "test.mp3"
     },
     {
       "id": 24,
-      "foreign": "deɛn",
+      "foreign": "ɛdeɛn",
       "native": "wat",
       "audioclip": "test.mp3"
     },
     {
       "id": 25,
-      "foreign": "bere bɛn",
+      "foreign": "ɛbere bɛn",
       "native": "wanneer",
       "audioclip": "test.mp3"
     },
     {
       "id": 26,
-      "foreign": "he",
+      "foreign": "ɛhenfa",
       "native": "waar",
       "audioclip": "test.mp3"
     },
@@ -182,7 +182,7 @@
     },
     {
       "id": 30,
-      "foreign": "wɔ",
+      "foreign": "mɛ wɔ",
       "native": "hebben",
       "audioclip": "test.mp3"
     },
@@ -194,31 +194,31 @@
     },
     {
       "id": 32,
-      "foreign": "yɛ",
+      "foreign": "me yɛ",
       "native": "doen/maken",
       "audioclip": "test.mp3"
     },
     {
       "id": 33,
-      "foreign": "pɛ",
+      "foreign": "me pɛ",
       "native": "willen",
       "audioclip": "test.mp3"
     },
     {
       "id": 34,
-      "foreign": "hia",
+      "foreign": "me hia",
       "native": "nodig hebben",
       "audioclip": "test.mp3"
     },
     {
       "id": 35,
-      "foreign": "pɛ",
+      "foreign": "m'ani gye ho",
       "native": "leuk vinden",
       "audioclip": "test.mp3"
     },
     {
       "id": 36,
-      "foreign": "nim",
+      "foreign": "me nim",
       "native": "weten",
       "audioclip": "test.mp3"
     },
@@ -236,7 +236,7 @@
     },
     {
       "id": 39,
-      "foreign": "enni ho hwee",
+      "foreign": "ɛnyɛ hwee",
       "native": "graag gedaan",
       "audioclip": "test.mp3"
     },
@@ -248,7 +248,7 @@
     },
     {
       "id": 41,
-      "foreign": "kosɛ me",
+      "foreign": "fa kyɛ me",
       "native": "excuseer mij",
       "audioclip": "test.mp3"
     },
@@ -320,13 +320,13 @@
     },
     {
       "id": 53,
-      "foreign": "du",
+      "foreign": "edu",
       "native": "tien",
       "audioclip": "test.mp3"
     },
     {
       "id": 54,
-      "foreign": "bere",
+      "foreign": "ebere",
       "native": "tijd",
       "audioclip": "test.mp3"
     },
@@ -338,13 +338,13 @@
     },
     {
       "id": 56,
-      "foreign": "adeɛ",
+      "foreign": "adyɛ bi",
       "native": "ding",
       "audioclip": "test.mp3"
     },
     {
       "id": 57,
-      "foreign": "da",
+      "foreign": "ɛda",
       "native": "dag",
       "audioclip": "test.mp3"
     },
@@ -357,7 +357,7 @@
     {
       "id": 59,
       "foreign": "aduane",
-      "native": "eten",
+      "native": "voedsel",
       "audioclip": "test.mp3"
     },
     {
@@ -368,7 +368,7 @@
     },
     {
       "id": 61,
-      "foreign": "fie",
+      "foreign": "efie",
       "native": "huis",
       "audioclip": "test.mp3"
     },
@@ -380,13 +380,13 @@
     },
     {
       "id": 63,
-      "foreign": "adamfo",
+      "foreign": "adanfo",
       "native": "vriend",
       "audioclip": "test.mp3"
     },
     {
       "id": 64,
-      "foreign": "papa",
+      "foreign": "ɛyɛ",
       "native": "goed",
       "audioclip": "test.mp3"
     },
@@ -398,7 +398,7 @@
     },
     {
       "id": 66,
-      "foreign": "kɛse",
+      "foreign": "kɛsiɛ",
       "native": "groot",
       "audioclip": "test.mp3"
     },
@@ -410,31 +410,31 @@
     },
     {
       "id": 68,
-      "foreign": "hyew",
+      "foreign": "ɛhyew",
       "native": "heet",
       "audioclip": "test.mp3"
     },
     {
       "id": 69,
-      "foreign": "awu",
+      "foreign": "awɔ",
       "native": "koud",
       "audioclip": "test.mp3"
     },
     {
       "id": 70,
-      "foreign": "foforo",
+      "foreign": "foforɔ",
       "native": "nieuw",
       "audioclip": "test.mp3"
     },
     {
       "id": 71,
-      "foreign": "dada",
+      "foreign": "dadaa",
       "native": "oud",
       "audioclip": "test.mp3"
     },
     {
       "id": 72,
-      "foreign": "ne",
+      "foreign": "ɛne",
       "native": "en",
       "audioclip": "test.mp3"
     },
@@ -452,13 +452,13 @@
     },
     {
       "id": 75,
-      "foreign": "mu",
+      "foreign": "emu",
       "native": "in",
       "audioclip": "test.mp3"
     },
     {
       "id": 76,
-      "foreign": "so",
+      "foreign": "eso",
       "native": "op",
       "audioclip": "test.mp3"
     },
@@ -470,25 +470,25 @@
     },
     {
       "id": 78,
-      "foreign": "ne",
+      "foreign": "ɛne",
       "native": "met",
       "audioclip": "test.mp3"
     },
     {
       "id": 79,
-      "foreign": "a nni ho",
+      "foreign": "enni ho a",
       "native": "zonder",
       "audioclip": "test.mp3"
     },
     {
       "id": 80,
-      "foreign": "kenkan",
+      "foreign": "akenkan",
       "native": "lezen",
       "audioclip": "test.mp3"
     },
     {
       "id": 81,
-      "foreign": "kɔda",
+      "foreign": "nnda",
       "native": "slapen",
       "audioclip": "test.mp3"
     },
@@ -500,13 +500,13 @@
     },
     {
       "id": 83,
-      "foreign": "kyerɛw",
+      "foreign": "nkyirɔye",
       "native": "schrijven",
       "audioclip": "test.mp3"
     },
     {
       "id": 84,
-      "foreign": "bue ɔpon no",
+      "foreign": "bue ɔpono no",
       "native": "deur openen",
       "audioclip": "test.mp3"
     },
@@ -524,7 +524,7 @@
     },
     {
       "id": 87,
-      "foreign": "tu ammirika",
+      "foreign": "ammirika",
       "native": "rennen",
       "audioclip": "test.mp3"
     }
