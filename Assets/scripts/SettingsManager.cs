@@ -1,5 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class SettingsManager : MonoBehaviour
 {
@@ -49,6 +51,8 @@ public class SettingsManager : MonoBehaviour
         settingsPanel.SetActive(true);
         Time.timeScale = 0f;
 
+        MouseManager.Instance.UnlockCursor();
+
         musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVol", 1f);
         ambienceVolumeSlider.value = PlayerPrefs.GetFloat("AmbienceVol", 1f);
     }
@@ -56,6 +60,8 @@ public class SettingsManager : MonoBehaviour
     public void Close()
     {
         settingsPanel.SetActive(false);Time.timeScale = 1f;
+
+        MouseManager.Instance.LockCursor();
     }
 
     void ApplyAndClose()

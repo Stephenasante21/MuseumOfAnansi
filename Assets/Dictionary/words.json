@@ -4,529 +4,529 @@
       "id": 0,
       "foreign": "seesei",
       "native": "nu",
-      "audioclip": "test2.mp3"
+      "audioclip": "word1.wav"
     },
     {
       "id": 1,
       "foreign": "anɔpa",
       "native": "ochtend",
-      "audioclip": "test3.mp3"
+      "audioclip": "word2.wav"
     },
     {
       "id": 2,
       "foreign": "Kafra",
       "native": "sorry",
-      "audioclip": "test.mp3"
+      "audioclip": "word3.wav"
     },
     {
       "id": 3,
       "foreign": "onuabaa",
       "native": "zus",
-      "audioclip": "test2.mp3"
+      "audioclip": "word4.wav"
     },
     {
       "id": 4,
       "foreign": "onuabarima",
       "native": "broer",
-      "audioclip": "test3.mp3"
+      "audioclip": "word5.wav"
     },
     {
       "id": 5,
       "foreign": "aane",
       "native": "ja",
-      "audioclip": "test2.mp3"
+      "audioclip": "word6.wav"
     },
     {
       "id": 6,
       "foreign": "abofra",
       "native": "kind",
-      "audioclip": "test3.mp3"
+      "audioclip": "word7.wav"
     },
     {
       "id": 7,
       "foreign": "agya",
       "native": "vader",
-      "audioclip": "test.mp3"
+      "audioclip": "word8.wav"
     },
     {
       "id": 8,
       "foreign": "Agoo",
       "native": "hallo",
-      "audioclip": "test.mp3"
+      "audioclip": "word9.wav"
     },
     {
       "id": 9,
       "foreign": "ɛwia",
       "native": "Zon",
-      "audioclip": "test.mp3"
+      "audioclip": "word10.wav"
     },
     {
       "id": 10,
       "foreign": "ɛpono",
       "native": "Deur",
-      "audioclip": "test.mp3"
+      "audioclip": "word11.wav"
     },
     {
       "id": 11,
       "foreign": "sekan",
       "native": "Zwaard",
-      "audioclip": "test.mp3"
+      "audioclip": "word12.wav"
     },
     {
       "id": 12,
       "foreign": "Maame",
       "native": "Moeder",
-      "audioclip": "test.mp3"
+      "audioclip": "word13.wav"
     },
     {
       "id": 13,
       "foreign": "efie",
       "native": "Huis",
-      "audioclip": "test.mp3"
+      "audioclip": "word14.wav"
     },
     {
       "id": 14,
       "foreign": "Dua",
       "native": "Boom",
-      "audioclip": "test.mp3"
+      "audioclip": "word15.wav"
     },
     {
       "id": 15,
       "foreign": "Ananse",
       "native": "Spin",
-      "audioclip": "test.mp3"
+      "audioclip": "word16.wav"
     },
     {
       "id": 16,
       "foreign": "egya",
       "native": "Vuur",
-      "audioclip": "test.mp3"
+      "audioclip": "word17.wav"
     },
     {
       "id": 17,
       "foreign": "me",
       "native": "ik",
-      "audioclip": "test.mp3"
+      "audioclip": "word18.wav"
     },
     {
       "id": 18,
       "foreign": "wo",
       "native": "jij",
-      "audioclip": "test.mp3"
+      "audioclip": "word19.wav"
     },
     {
       "id": 19,
       "foreign": "ɔno",
       "native": "hij",
-      "audioclip": "test.mp3"
+      "audioclip": "word20.wav"
     },
     {
       "id": 20,
       "foreign": "ɔno",
       "native": "zij",
-      "audioclip": "test.mp3"
+      "audioclip": "word20.wav"
     },
     {
       "id": 21,
       "foreign": "yɛn",
       "native": "wij",
-      "audioclip": "test.mp3"
+      "audioclip": "word21.wav"
     },
     {
       "id": 22,
       "foreign": "wɔn",
       "native": "zij",
-      "audioclip": "test.mp3"
+      "audioclip": "word22.wav"
     },
     {
       "id": 23,
       "foreign": "hwanaa",
       "native": "wie",
-      "audioclip": "test.mp3"
+      "audioclip": "word23.wav"
     },
     {
       "id": 24,
       "foreign": "ɛdeɛn",
       "native": "wat",
-      "audioclip": "test.mp3"
+      "audioclip": "word24.wav"
     },
     {
       "id": 25,
       "foreign": "ɛbere bɛn",
       "native": "wanneer",
-      "audioclip": "test.mp3"
+      "audioclip": "word25.wav"
     },
     {
       "id": 26,
       "foreign": "ɛhenfa",
       "native": "waar",
-      "audioclip": "test.mp3"
+      "audioclip": "word26.wav"
     },
     {
       "id": 27,
       "foreign": "adɛn",
       "native": "waarom",
-      "audioclip": "test.mp3"
+      "audioclip": "word27.wav"
     },
     {
       "id": 28,
       "foreign": "sɛn",
       "native": "hoe",
-      "audioclip": "test.mp3"
+      "audioclip": "word28.wav"
     },
     {
       "id": 29,
       "foreign": "yɛ",
       "native": "zijn",
-      "audioclip": "test.mp3"
+      "audioclip": "word29.wav"
     },
     {
       "id": 30,
       "foreign": "mɛ wɔ",
       "native": "hebben",
-      "audioclip": "test.mp3"
+      "audioclip": "word30.wav"
     },
     {
       "id": 31,
       "foreign": "kɔ",
       "native": "gaan",
-      "audioclip": "test.mp3"
+      "audioclip": "word31.wav"
     },
     {
       "id": 32,
       "foreign": "me yɛ",
       "native": "doen/maken",
-      "audioclip": "test.mp3"
+      "audioclip": "word32.wav"
     },
     {
       "id": 33,
       "foreign": "me pɛ",
       "native": "willen",
-      "audioclip": "test.mp3"
+      "audioclip": "word33.wav"
     },
     {
       "id": 34,
       "foreign": "me hia",
       "native": "nodig hebben",
-      "audioclip": "test.mp3"
+      "audioclip": "word34.wav"
     },
     {
       "id": 35,
       "foreign": "m'ani gye ho",
       "native": "leuk vinden",
-      "audioclip": "test.mp3"
+      "audioclip": "word35.wav"
     },
     {
       "id": 36,
       "foreign": "me nim",
       "native": "weten",
-      "audioclip": "test.mp3"
+      "audioclip": "word36.wav"
     },
     {
       "id": 37,
       "foreign": "mepa wo kyɛw",
       "native": "alsjeblieft",
-      "audioclip": "test.mp3"
+      "audioclip": "word37.wav"
     },
     {
       "id": 38,
       "foreign": "meda wo ase",
       "native": "dank je wel",
-      "audioclip": "test.mp3"
+      "audioclip": "word38.wav"
     },
     {
       "id": 39,
       "foreign": "ɛnyɛ hwee",
       "native": "graag gedaan",
-      "audioclip": "test.mp3"
+      "audioclip": "word39.wav"
     },
     {
       "id": 40,
       "foreign": "Kafra",
       "native": "sorry",
-      "audioclip": "test.mp3"
+      "audioclip": "word40.wav"
     },
     {
       "id": 41,
       "foreign": "fa kyɛ me",
       "native": "excuseer mij",
-      "audioclip": "test.mp3"
+      "audioclip": "word41.wav"
     },
     {
       "id": 42,
       "foreign": "aane",
       "native": "ja",
-      "audioclip": "test.mp3"
+      "audioclip": "word42.wav"
     },
     {
       "id": 43,
       "foreign": "daabi",
       "native": "nee",
-      "audioclip": "test.mp3"
+      "audioclip": "word43.wav"
     },
     {
       "id": 44,
       "foreign": "baako",
       "native": "een",
-      "audioclip": "test.mp3"
+      "audioclip": "word44.wav"
     },
     {
       "id": 45,
       "foreign": "mmienu",
       "native": "twee",
-      "audioclip": "test.mp3"
+      "audioclip": "word45.wav"
     },
     {
       "id": 46,
       "foreign": "mmiɛnsa",
       "native": "drie",
-      "audioclip": "test.mp3"
+      "audioclip": "word46.wav"
     },
     {
       "id": 47,
       "foreign": "ɛnan",
       "native": "vier",
-      "audioclip": "test.mp3"
+      "audioclip": "word47.wav"
     },
     {
       "id": 48,
       "foreign": "enum",
       "native": "vijf",
-      "audioclip": "test.mp3"
+      "audioclip": "word48.wav"
     },
     {
       "id": 49,
       "foreign": "nsia",
       "native": "zes",
-      "audioclip": "test.mp3"
+      "audioclip": "word49.wav"
     },
     {
       "id": 50,
       "foreign": "nson",
       "native": "zeven",
-      "audioclip": "test.mp3"
+      "audioclip": "word50.wav"
     },
     {
       "id": 51,
       "foreign": "nwɔtwe",
       "native": "acht",
-      "audioclip": "test.mp3"
+      "audioclip": "word51.wav"
     },
     {
       "id": 52,
       "foreign": "nkron",
       "native": "negen",
-      "audioclip": "test.mp3"
+      "audioclip": "word52.wav"
     },
     {
       "id": 53,
       "foreign": "edu",
       "native": "tien",
-      "audioclip": "test.mp3"
+      "audioclip": "word53.wav"
     },
     {
       "id": 54,
       "foreign": "ebere",
       "native": "tijd",
-      "audioclip": "test.mp3"
+      "audioclip": "word54.wav"
     },
     {
       "id": 55,
       "foreign": "onipa",
       "native": "persoon",
-      "audioclip": "test.mp3"
+      "audioclip": "word55.wav"
     },
     {
       "id": 56,
       "foreign": "adyɛ bi",
       "native": "ding",
-      "audioclip": "test.mp3"
+      "audioclip": "word56.wav"
     },
     {
       "id": 57,
       "foreign": "ɛda",
       "native": "dag",
-      "audioclip": "test.mp3"
+      "audioclip": "word57.wav"
     },
     {
       "id": 58,
       "foreign": "bea",
       "native": "plaats",
-      "audioclip": "test.mp3"
+      "audioclip": "word58.wav"
     },
     {
       "id": 59,
       "foreign": "aduane",
       "native": "voedsel",
-      "audioclip": "test.mp3"
+      "audioclip": "word59.wav"
     },
     {
       "id": 60,
       "foreign": "nsuo",
       "native": "water",
-      "audioclip": "test.mp3"
+      "audioclip": "word60.wav"
     },
     {
       "id": 61,
       "foreign": "efie",
       "native": "huis",
-      "audioclip": "test.mp3"
+      "audioclip": "word61.wav"
     },
     {
       "id": 62,
       "foreign": "sika",
       "native": "geld",
-      "audioclip": "test.mp3"
+      "audioclip": "word62.wav"
     },
     {
       "id": 63,
       "foreign": "adanfo",
       "native": "vriend",
-      "audioclip": "test.mp3"
+      "audioclip": "word63.wav"
     },
     {
       "id": 64,
       "foreign": "ɛyɛ",
       "native": "goed",
-      "audioclip": "test.mp3"
+      "audioclip": "word64.wav"
     },
     {
       "id": 65,
       "foreign": "bɔne",
       "native": "slecht",
-      "audioclip": "test.mp3"
+      "audioclip": "word65.wav"
     },
     {
       "id": 66,
       "foreign": "kɛsiɛ",
       "native": "groot",
-      "audioclip": "test.mp3"
+      "audioclip": "word66.wav"
     },
     {
       "id": 67,
       "foreign": "ketewa",
       "native": "klein",
-      "audioclip": "test.mp3"
+      "audioclip": "word67.wav"
     },
     {
       "id": 68,
       "foreign": "ɛhyew",
       "native": "heet",
-      "audioclip": "test.mp3"
+      "audioclip": "word68.wav"
     },
     {
       "id": 69,
       "foreign": "awɔ",
       "native": "koud",
-      "audioclip": "test.mp3"
+      "audioclip": "word69.wav"
     },
     {
       "id": 70,
       "foreign": "foforɔ",
       "native": "nieuw",
-      "audioclip": "test.mp3"
+      "audioclip": "word70.wav"
     },
     {
       "id": 71,
       "foreign": "dadaa",
       "native": "oud",
-      "audioclip": "test.mp3"
+      "audioclip": "word71.wav"
     },
     {
       "id": 72,
       "foreign": "ɛne",
       "native": "en",
-      "audioclip": "test.mp3"
+      "audioclip": "word72.wav"
     },
     {
       "id": 73,
       "foreign": "nanso",
       "native": "maar",
-      "audioclip": "test.mp3"
+      "audioclip": "word73.wav"
     },
     {
       "id": 74,
       "foreign": "anaa",
       "native": "of",
-      "audioclip": "test.mp3"
+      "audioclip": "word74.wav"
     },
     {
       "id": 75,
       "foreign": "emu",
       "native": "in",
-      "audioclip": "test.mp3"
+      "audioclip": "word75.wav"
     },
     {
       "id": 76,
       "foreign": "eso",
       "native": "op",
-      "audioclip": "test.mp3"
+      "audioclip": "word76.wav"
     },
     {
       "id": 77,
-      "foreign": "ase",
+      "foreign": "asie",
       "native": "onder",
-      "audioclip": "test.mp3"
+      "audioclip": "word77.wav"
     },
     {
       "id": 78,
       "foreign": "ɛne",
       "native": "met",
-      "audioclip": "test.mp3"
+      "audioclip": "word78.wav"
     },
     {
       "id": 79,
       "foreign": "enni ho a",
       "native": "zonder",
-      "audioclip": "test.mp3"
+      "audioclip": "word79.wav"
     },
     {
       "id": 80,
       "foreign": "akenkan",
       "native": "lezen",
-      "audioclip": "test.mp3"
+      "audioclip": "word80.wav"
     },
     {
       "id": 81,
       "foreign": "nnda",
       "native": "slapen",
-      "audioclip": "test.mp3"
+      "audioclip": "word81.wav"
     },
     {
       "id": 82,
       "foreign": "yɛ aduane",
       "native": "eten klaarmaken",
-      "audioclip": "test.mp3"
+      "audioclip": "word82.wav"
     },
     {
       "id": 83,
       "foreign": "nkyirɔye",
       "native": "schrijven",
-      "audioclip": "test.mp3"
+      "audioclip": "word83.wav"
     },
     {
       "id": 84,
       "foreign": "bue ɔpono no",
       "native": "deur openen",
-      "audioclip": "test.mp3"
+      "audioclip": "word84.wav"
     },
     {
       "id": 85,
       "foreign": "huri",
       "native": "springen",
-      "audioclip": "test.mp3"
+      "audioclip": "word85.wav"
     },
     {
       "id": 86,
       "foreign": "to",
       "native": "gooien",
-      "audioclip": "test.mp3"
+      "audioclip": "word86.wav"
     },
     {
       "id": 87,
       "foreign": "ammirika",
       "native": "rennen",
-      "audioclip": "test.mp3"
+      "audioclip": "word87.wav"
     }
   ]
 }

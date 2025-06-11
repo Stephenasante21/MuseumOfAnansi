@@ -13,8 +13,16 @@ public class PlayGame : MonoBehaviour
         panel.SetActive(false);
     }
 
-    public void Show() { panel.SetActive(true); Time.timeScale = 0f; }
-    public void Hide() { panel.SetActive(false); Time.timeScale = 1f; }
+    public void Show() { 
+        panel.SetActive(true); 
+        Time.timeScale = 0f;
+        MouseManager.Instance.UnlockCursor();
+    }
+    public void Hide() { 
+        panel.SetActive(false); 
+        Time.timeScale = 1f;
+        MouseManager.Instance.LockCursor();
+    }
     public void OnPlayButtonPressed()
     {
         Time.timeScale = 1f;

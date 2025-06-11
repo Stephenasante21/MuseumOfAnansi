@@ -56,7 +56,6 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
             }
 
             interactText.text = interactTextString;
-            inspectText.text = inspectTextString;
         }
 
         internal void TriggerCanvas()

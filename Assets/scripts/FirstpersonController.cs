@@ -197,7 +197,7 @@ public class FirstpersonController: MonoBehaviour
 
         if (inputKeyDownCursor)
         {
-            ToggleLockCursor();
+            //ToggleLockCursor();
         }
     }
 

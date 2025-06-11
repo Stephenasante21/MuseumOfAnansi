@@ -27,10 +27,9 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts.SingleObjectSc
         private bool isEnabled = false;
         public override void Interact()
         {
-            isEnabled = !isEnabled;
-            mineGameMenu.SetActive(isEnabled);
-            Firstperson.SetLockCursor(isEnabled);
-            
+            mineGameMenu.SetActive(true);
+            MouseManager.Instance.UnlockCursor();
+
         }
 
         private void LoadEasyScene()
