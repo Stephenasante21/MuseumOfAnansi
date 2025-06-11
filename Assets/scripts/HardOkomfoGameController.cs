@@ -185,7 +185,7 @@ public class HardOkomfoGameController : MonoBehaviour
         int s = (int)(elapsedTime % 60f);
         timerText.text = $"Tijd: {m:00}:{s:00}";
 
-        questionText.text = $"Gefeliciteerd!\nJe hebt {correctCount} zinnen goed.\nKlik om verder te gaan.";
+        questionText.text = $"Gefeliciteerd!\nJe hebt {correctCount} zinnen goed.";
 
         // Hide all options
         foreach (var b in optionButtons)

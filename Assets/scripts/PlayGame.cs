@@ -6,7 +6,7 @@ public class PlayGame : MonoBehaviour
     [SerializeField] private string hardSceneName;
 
     [SerializeField] private GameObject panel;
-
+    [SerializeField] private AudioSource museumMusicSource;
 
     void Awake()
     {
@@ -27,6 +27,14 @@ public class PlayGame : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(normalSceneName);
+
+        if (museumMusicSource != null)
+        {
+            museumMusicSource.Stop();
+        }
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(normalSceneName, LoadSceneMode.Additive);
     }
 
     public void OnHardButtonPressed()

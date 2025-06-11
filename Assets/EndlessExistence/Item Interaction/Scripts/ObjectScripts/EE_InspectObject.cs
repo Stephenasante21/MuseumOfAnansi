@@ -20,15 +20,6 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
         }
         
 
-        private void Update()
-        {
-            rotation = InputHandler.Instance.LookInput;
-            rotationAllowed = InputHandler.Instance.SelectionTriggered;
-            if (rotationAllowed)
-            {
-                StartCoroutine(RotateObject());
-            }
-        }
 
         private IEnumerator RotateObject()
         {

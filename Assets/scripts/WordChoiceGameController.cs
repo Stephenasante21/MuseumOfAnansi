@@ -174,7 +174,7 @@ public class WordChoiceGameController : MonoBehaviour
         int seconds = (int)(elapsedTime % 60f);
         timerText.text = $"Tijd: {minutes:00}:{seconds:00}";
 
-        questionText.text = $"Gefeliciteerd! Je hebt {correctCount} goed.\nKlik om verder te gaan.";
+        questionText.text = $"Gefeliciteerd! Je hebt {correctCount} goed.";
 
         foreach (var b in optionButtons)
             b.gameObject.SetActive(false);

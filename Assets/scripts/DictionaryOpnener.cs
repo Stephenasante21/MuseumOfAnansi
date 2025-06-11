@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DictionaryOpnener : MonoBehaviour
 {
@@ -26,6 +27,14 @@ public class DictionaryOpnener : MonoBehaviour
 
         if (pauseTimeWhileOpen)
             Time.timeScale = _isOpen ? 0f : 1f;
+        if (_isOpen)
+        {
+            MouseManager.Instance.UnlockCursor();
+        }
+        else if(SceneManager.GetAllScenes().Length==1)
+        {
+            MouseManager.Instance.LockCursor();
+        }
     }
 
     public void CloseDictionary()

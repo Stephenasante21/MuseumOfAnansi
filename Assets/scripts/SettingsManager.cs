@@ -13,7 +13,7 @@ public class SettingsManager : MonoBehaviour
     public Button quitButton;
 
     public Slider musicVolumeSlider;
-    public Slider ambienceVolumeSlider;
+    
 
     void Awake()
     {
@@ -54,7 +54,6 @@ public class SettingsManager : MonoBehaviour
         MouseManager.Instance.UnlockCursor();
 
         musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVol", 1f);
-        ambienceVolumeSlider.value = PlayerPrefs.GetFloat("AmbienceVol", 1f);
     }
 
     public void Close()
@@ -66,11 +65,10 @@ public class SettingsManager : MonoBehaviour
 
     void ApplyAndClose()
     {
-        PlayerPrefs.SetFloat("MusicVol", musicVolumeSlider.value);
-        PlayerPrefs.SetFloat("AmbienceVol", ambienceVolumeSlider.value);
+        PlayerPrefs.SetFloat("MusicVol", musicVolumeSlider.value / 100f);
         PlayerPrefs.Save();
 
-        AudioListener.volume = musicVolumeSlider.value;
+        AudioListener.volume = musicVolumeSlider.value/ 100f;
 
         Close();
     }
