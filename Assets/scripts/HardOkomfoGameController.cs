@@ -137,7 +137,7 @@ public class HardOkomfoGameController : MonoBehaviour
             string translation = currentEntry.translationDutch;
 
             // Add to FoundWordsManager
-            FoundWordsManager.Instance.AddEntry(fullSentence, translation);
+            FoundWordsManager.Instance.AddEntry(fullSentence, translation,currentEntry.audioclip);
 
             // Play correct‐sound
             if (correctSound != null)

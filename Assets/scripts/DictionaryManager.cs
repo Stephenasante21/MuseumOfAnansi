@@ -17,7 +17,8 @@ public class SentenceEntry
     public int id;
     public string templateTwi;      
     public string missingTwi;       
-    public string translationDutch; 
+    public string translationDutch;
+    public string audioclip;
 }
 
 [System.Serializable]

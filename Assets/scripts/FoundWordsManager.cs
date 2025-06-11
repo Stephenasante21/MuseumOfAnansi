@@ -28,14 +28,14 @@ public class FoundWordsManager : MonoBehaviour
     }
 
     
-    public void AddEntry(string foreign, string native)
+    public void AddEntry(string foreign, string native, string audioclip)
     {
         var tmp = new DictionaryEntry
         {
             id = 0,                  
             foreign = foreign,
             native = native,
-            audioclip = null
+            audioclip = audioclip
         };
         AddEntry(tmp);
     }

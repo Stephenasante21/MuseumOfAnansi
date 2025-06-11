@@ -58,7 +58,7 @@ public class AudioPlayer : MonoBehaviour
     private IEnumerator PlayFromStreamingAssets()
     {
         audioButton.interactable = false;
-
+        Debug.Log(audioClipName);
         // Build URL
         string path = Path.Combine(Application.streamingAssetsPath, "clips", audioClipName);
         string url = path.Contains("://") ? path : "file:///" + path;
