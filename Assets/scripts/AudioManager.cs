@@ -71,12 +71,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(AudioClip clip, float volume = 1f)
-    {
-        if (clip == null || sfxSource == null) return;
-        sfxSource.PlayOneShot(clip, volume);
-    }
-
     [Serializable]
     public class SceneMusic
     {
@@ -85,5 +79,17 @@ public class AudioManager : MonoBehaviour
         [Range(0f, 1f)]
         public float volume = 1f;
         public bool loop = true;
+    }
+
+    public void PauseBGM()
+    {
+        if (bgmSource.isPlaying)
+            bgmSource.Pause();
+    }
+
+    public void ResumeBGM()
+    {
+        if (bgmSource.clip != null && !bgmSource.isPlaying)
+            bgmSource.UnPause();
     }
 }

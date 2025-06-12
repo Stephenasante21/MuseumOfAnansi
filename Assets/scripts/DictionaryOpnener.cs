@@ -30,11 +30,16 @@ public class DictionaryOpnener : MonoBehaviour
         if (_isOpen)
         {
             MouseManager.Instance.UnlockCursor();
+            AudioManager.Instance.PauseBGM();
         }
         else if(SceneManager.GetAllScenes().Length==1)
         {
             MouseManager.Instance.LockCursor();
+            AudioManager.Instance.bgmSource.UnPause();
+
         }
+
+
     }
 
     public void CloseDictionary()
@@ -46,5 +51,9 @@ public class DictionaryOpnener : MonoBehaviour
 
         if (pauseTimeWhileOpen)
             Time.timeScale = 1f;
+        AudioManager.Instance.ResumeBGM();
+
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.bgmSource.UnPause();
     }
 }

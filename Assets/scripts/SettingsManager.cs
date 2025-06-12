@@ -53,7 +53,7 @@ public class SettingsManager : MonoBehaviour
 
         MouseManager.Instance.UnlockCursor();
 
-        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVol", 1f);
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVol", 1f) ;
     }
 
     public void Close()
