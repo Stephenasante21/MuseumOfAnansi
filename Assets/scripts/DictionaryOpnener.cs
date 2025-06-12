@@ -32,28 +32,22 @@ public class DictionaryOpnener : MonoBehaviour
             MouseManager.Instance.UnlockCursor();
             AudioManager.Instance.PauseBGM();
         }
-        else if(SceneManager.GetAllScenes().Length==1)
+        else if(SceneManager.GetAllScenes().Length==2)
+        {
+            AudioManager.Instance.bgmSource.UnPause();
+        }
+        else if (SceneManager.GetAllScenes().Length == 1)
         {
             MouseManager.Instance.LockCursor();
             AudioManager.Instance.bgmSource.UnPause();
-
         }
-
-
     }
 
     public void CloseDictionary()
     {
-        if (!_isOpen) return;
-
-        _isOpen = false;
-        dictionaryPanel.SetActive(false);
-
         if (pauseTimeWhileOpen)
             Time.timeScale = 1f;
-        AudioManager.Instance.ResumeBGM();
 
-        if (AudioManager.Instance != null)
-            AudioManager.Instance.bgmSource.UnPause();
+        ToggleDictionary();
     }
 }

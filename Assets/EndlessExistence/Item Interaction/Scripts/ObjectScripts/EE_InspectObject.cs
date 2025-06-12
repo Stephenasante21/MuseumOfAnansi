@@ -15,7 +15,6 @@ namespace EndlessExistence.Item_Interaction.Scripts.ObjectScripts
 
         private void Start()
         {
-            gameObject.GetComponent<EE_Object>().objectInspectPanel.SetActive(true);
             gameObject.GetComponent<EE_InspectObject>().enabled = false;
         }
         

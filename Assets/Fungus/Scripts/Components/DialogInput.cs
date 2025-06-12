@@ -51,7 +51,7 @@ namespace Fungus
         protected virtual void Awake()
         {
             writer = GetComponent<Writer>();
-
+            currentStandaloneInputModule = EventSystem.current.currentInputModule as StandaloneInputModule;
             CheckEventSystem();
         }
 
@@ -84,16 +84,11 @@ namespace Fungus
                 currentStandaloneInputModule = EventSystem.current.GetComponent<StandaloneInputModule>();
             }
 
-            if (writer != null)
+            if (writer != null && Input.GetKeyDown(KeyCode.Return))
             {
-                // Eigen toevoeging: Enter (Return) mag de dialoog ook voortzetten
-                if (Input.GetKeyDown(KeyCode.Return) ||
-                    Input.GetButtonDown(currentStandaloneInputModule.submitButton) ||
-                    (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
-                {
-                    SetNextLineFlag();
-                }
+                SetNextLineFlag();
             }
+
 
             switch (clickMode)
             {
